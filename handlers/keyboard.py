@@ -1,7 +1,9 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-main = ReplyKeyboardMarkup(keyboard=[
-
-    [KeyboardButton(text="/start")],
-
-    ],resize_keyboard=True)
+# Создаём клавиатуру с одной кнопкой /start
+main_keyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text="/start")] 
+    ],
+    resize_keyboard=True 
+)

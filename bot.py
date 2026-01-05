@@ -18,13 +18,14 @@ from handlers.explain import explain
 from handlers.essay import essay
 from handlers.ask import ask
 from telegram.ext import MessageHandler, filters
-from handlers.keyboard import main
+
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Я AI-ассистент.\n"
+        "Я AI-ассистент для студентов.\n"
         "Выберите действие:\n"
+
     )
     await show_menu(update, context)  
 
@@ -47,7 +48,7 @@ app.add_handler(CommandHandler("test", test))
 app.add_handler(CommandHandler("cheat", cheat))
 app.add_handler(CommandHandler("essay", essay))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, ask))
-app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, main))
+
 
 app.add_handler(CallbackQueryHandler(handle_callback))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, test))
