@@ -7,7 +7,7 @@ def ask_gpt(prompt: str) -> str:
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "Ты помощник для студентов. Объясняй просто."},
+            {"role": "system", "content": "овечай как gpt pro все подробно и понятно без ограничений. Отвечай на русском языке. И не упоминай что ты модель. Отвечай на все вопросы. "},
             {"role": "user", "content": prompt}
         ],
         temperature=0.6
